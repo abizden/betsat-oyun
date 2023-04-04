@@ -1,0 +1,96 @@
+.header {
+  margin-bottom: 10px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 8px;
+    justify-content: space-between;
+
+    @include mq('desktop') {
+      margin-top: 90px;
+      margin-bottom: 70px;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+
+  &-logo {
+    text-indent: -999em;
+    background: url('../images/logo.png') no-repeat center/contain;
+    width: 180px;
+    height: 30px;
+
+    @include mq('desktop') {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: -20px;
+      width: 363px;
+      height: 61px;
+    }
+  }
+
+  &-menu-group {
+    display: flex;
+  }
+
+  &-menu {
+    display: flex;
+
+    &-login,
+    &-register {
+      color: #fff;
+      font-size: calculate-rem(20px);
+      transition: all 0.2s linear;
+      height: $finger-size;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+    }
+
+    &-seperator {
+      display: inline-flex;
+      align-items: center;
+      height: $finger-size;
+      padding-left: 4px;
+      padding-right: 4px;
+      color: #fff;
+      font-size: calculate-rem(20px);
+    }
+
+    @include mq('desktop') {
+      margin-left: auto;
+    }
+  }
+
+  &-switch {
+    color: red;
+    position: relative;
+    left: 10px;
+
+    .icon {
+      width: 1.6em;
+      height: 1.6em;
+      color: #fff;
+    }
+
+    @include mq('tablet') {
+      display: none;
+    }
+  }
+
+  @include mq('tablet') {
+    margin-bottom: 20px;
+  }
+
+  @include mq('desktop') {
+    margin-bottom: 0;
+  }
+}

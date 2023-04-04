@@ -1,0 +1,111 @@
+.nav-wrap {
+  position: relative;
+}
+
+.nav {
+  pointer-events: none;
+  transition: 0.2s;
+  transform: translate(100%, 0);
+  opacity: 0;
+  flex-direction: column;
+  background: rgb(120, 66, 188);
+  padding: transform-number-to-string($gutter);
+  border-radius: $border-radius;
+  box-shadow: 0 20px 30px rgba(black, 0.2);
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 100%;
+  width: calc(100% - #{transform-number-to-string($gutter * 2)});
+  z-index: 5;
+
+  body.menu-show & {
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+
+    .menu-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: $finger-size;
+      padding-left: 6px;
+      padding-right: 6px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      border-radius: $border-radius;
+      font-size: calculate-rem(22px);
+      transition: all 0.2s linear;
+      cursor: pointer;
+      color: #fff;
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $color-primary;
+        background: rgb(171, 136, 214);
+      }
+
+      @include mq('tablet') {
+        padding-left: 23px;
+        padding-right: 23px;
+        justify-content: flex-start;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:hover,
+        &:focus,
+        &.active {
+          color: $color-primary;
+          background: none;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+
+    @include mq('tablet') {
+      flex-direction: row;
+    }
+  }
+
+  &-select {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include mq('tablet') {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    transition: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-select {
+      margin-top: 0;
+    }
+  }
+
+  @include mq('desktop') {
+    margin-bottom: 32px;
+  }
+}

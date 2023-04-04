@@ -1,0 +1,64 @@
+.footer {
+  padding-bottom: 20px;
+
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .menu-item {
+      font-weight: 500;
+      font-size: calculate-rem(19px);
+    }
+
+    &:first-child {
+      .btn {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      .btn {
+        padding-right: 0;
+      }
+    }
+
+    @include mq('desktop') {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &-copyright {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer-logo {
+      margin-bottom: 10px;
+      max-width: 26%;
+    }
+
+    p {
+      font-size: calculate-rem(19px);
+      font-weight: 500;
+    }
+
+    @include mq('tablet') {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: flex-start;
+
+      .footer-logo {
+        margin-bottom: 0;
+        max-width: 100%;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @include mq('tablet') {
+    padding-bottom: 35px;
+  }
+}
