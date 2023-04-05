@@ -50,7 +50,7 @@
     p {
       font-size: calculate-rem(19px);
       font-weight: 500;
-      color: $color-six
+      color: $color-six;
     }
 
     @include mq('tablet') {
