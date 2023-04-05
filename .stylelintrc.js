@@ -9,5 +9,6 @@ module.exports = {
     "declaration-colon-newline-after": null,
     "block-closing-brace-newline-after": null,
     "selector-list-comma-newline-after": null,
+    "comment-empty-line-before": null,
   },
 }
