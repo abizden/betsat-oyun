@@ -1,14 +1,20 @@
 // Load CSS Reset from NPM
 @import "~normalize.css";
-
+//
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap');
-
 //
 @import "config/variable";
 @import "config/mixin";
+//
 @import "helpers/format";
 @import "helpers/global";
+//
+@import "components/showcase";
+@import "components/card";
+@import "components/form";
+//
 @import "layouts/header";
 @import "layouts/nav";
 @import "layouts/footer";
-@import "pages/showcase";
+//
+@import "pages/page2";

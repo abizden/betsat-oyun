@@ -1,9 +1,23 @@
+main {
+  .showcase {
+    @include mq('desktop') {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .showcase {
   position: relative;
   margin-bottom: 20px;
 
   &-image {
     box-shadow: 0 10px 29px 9px rgba(0, 0, 0, 0.1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
   &-action {
@@ -17,13 +31,7 @@
     }
   }
 
-  @include mq('large') {
-    margin-bottom: 75px;
-
-    &:last-child {
-      margin-bottom: 50px;
-    }
-
+  @include mq('desktop') {
     &-action {
       bottom: 60px;
 

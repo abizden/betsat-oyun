@@ -9,7 +9,8 @@
   opacity: 0;
   flex-direction: column;
   background: rgb(120, 66, 188);
-  padding: transform-number-to-string($gutter);
+  padding-top: transform-number-to-string($gutter);
+  padding-bottom: transform-number-to-string($gutter);
   border-radius: $border-radius;
   box-shadow: 0 20px 30px rgba(black, 0.2);
   position: absolute;
@@ -98,6 +99,8 @@
     .container {
       display: flex;
       justify-content: space-between;
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     &-select {
