@@ -8,7 +8,7 @@
     margin-top: 8px;
     justify-content: space-between;
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       margin-top: 90px;
       margin-bottom: 70px;
       align-items: flex-end;
@@ -18,11 +18,11 @@
 
   &-logo {
     text-indent: -999em;
-    background: url('../images/logo.png') no-repeat center/contain;
-    width: 180px;
-    height: 30px;
+    background: url("../images/logo.png") no-repeat center/contain;
+    width: 160px;
+    height: 27px;
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -49,6 +49,11 @@
       display: inline-flex;
       align-items: center;
 
+      svg {
+        color: $color-primary;
+        margin-right: 3px;
+      }
+
       &:hover,
       &:focus {
         color: $color-primary;
@@ -65,32 +70,94 @@
       font-size: calculate-rem(20px);
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       margin-left: auto;
     }
   }
 
   &-switch {
-    color: red;
     position: relative;
-    left: 10px;
+    transition-duration: 0.5s;
+    /* left: 10px; */
 
-    .icon {
-      width: 1.6em;
-      height: 1.6em;
-      color: #fff;
+    .icon-left,
+    .icon-right {
+      transition-duration: 0.5s;
+      position: absolute;
+      height: 4px;
+      width: calc(#{$finger-size} / 2 - 4px);
+      top: calc(#{$finger-size} / 2);
+      background-color: #fff;
+      left: 0px;
+      margin-left: 6px;
     }
 
-    @include mq('tablet') {
+    .icon-right {
+      left: calc(#{$finger-size} / 2 - 4px);
+    }
+
+    .icon-left,
+    .icon-right {
+      &::before,
+      &::after {
+        transition-duration: 0.5s;
+        position: absolute;
+        width:  calc(#{$finger-size} / 2 - 4px);
+        height: inherit;
+        background-color: #fff;
+        content: "";
+        top: -10px;
+        left: 0;
+      }
+
+      &::after {
+        top: 10px;
+      }
+    }
+
+    @include mq("tablet") {
       display: none;
     }
   }
 
-  @include mq('tablet') {
+  @include mq("tablet") {
     margin-bottom: 20px;
   }
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     margin-bottom: 0;
+  }
+}
+
+.menu-show {
+  .header-switch {
+    .icon-left,
+    .icon-right {
+      background: transparent;
+    }
+
+    .icon-left {
+      &::before {
+        transform: rotateZ(45deg) scaleX(1.4) translate(4px, 4px);
+        top: -13px;
+      }
+
+      &::after {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(4px, -4px);
+        top: 13px;
+      }
+    }
+
+    .icon-right {
+      &::before {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-4px, 4px);
+        top: -13px;
+      }
+
+      &::after {
+        transform: rotateZ(45deg) scaleX(1.4) translate(-4px, -4px);
+        top: 13px;
+      }
+    }
   }
 }

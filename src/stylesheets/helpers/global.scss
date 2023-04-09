@@ -48,6 +48,13 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-size: calculate-rem(30px);
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
 button {
   border: none;
   background: none;
@@ -126,7 +133,27 @@ button {
     }
   }
 
-  &-parallelogram {
+  &-thirty {
+    background-color: $color-seven;
+    color: #fff;
+    font-size: calculate-rem(24px);
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      background: $color-primary;
+      color: #000;
+    }
+  }
+
+  &-large {
+    @include mq('large') {
+      height: calc(#{$finger-size} * 1.5);
+    }
+  }
+}
+
+.parallelogram {
     transform: skew(-40deg);
     border-radius: 0;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
@@ -137,50 +164,3 @@ button {
       }
     }
   }
-}
-
-.select {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  height: $finger-size;
-
-  select {
-    appearance: none;
-    background: none;
-    border: none;
-    color: #fff;
-    outline: 0;
-    box-shadow: none;
-    flex: 1;
-    padding-right: calculate-rem(25px);
-    cursor: pointer;
-    font-size: calculate-rem(22px);
-
-    &::-ms-expand {
-      display: none;
-    }
-  }
-
-  &:hover, &:focus {
-    &::after {
-      border-top-color: #fff;
-    }
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    margin-top: calculate-rem(2px);
-    width: 0;
-    height: 0;
-    border-left: calculate-rem(10px) solid transparent;
-    border-right: calculate-rem(10px) solid transparent;
-    border-top: calculate-rem(10px) solid $color-primary;
-    pointer-events: none;
-    transition: 0.25s all ease;
-  }
-}

@@ -1,0 +1,95 @@
+.table {
+  display: table;
+  text-align: center;
+  margin: auto 0;
+  border-collapse: separate;
+  font-weight: 600;
+  font-size: calculate-rem(22px);
+  width: 100%;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.theader {
+  display: table-row;
+}
+
+.table-header {
+  display: table-cell;
+  color: $color-third;
+  font-size: calculate-rem(15px);
+  padding: 8px 10px;
+
+  @include mq("tablet") {
+    font-size: calculate-rem(20px);
+  }
+
+  @include mq("desktop") {
+    padding: 8px 20px;
+    font-size: calculate-rem(15px);
+  }
+}
+
+.table-small {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.table-row > .table-small > .table-cell:nth-child(odd) {
+  display: none;
+  background: #bdbdbd;
+  color: #e5e5e5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.table-row > .table-small > .table-cell {
+  padding: 8px 10px;
+  color: $color-third;
+
+  @include mq("desktop") {
+    padding: 8px 20px;
+  }
+}
+
+.table-row:nth-child(2n) {
+  background: #dbdcdd;
+}
+
+@media screen and (max-width: 650px) {
+  .table {
+    display: block;
+  }
+
+  .table-row:nth-child(2n + 3) {
+    background: none;
+  }
+
+  .theader {
+    display: none;
+  }
+
+  .table-row > .table-small > .table-cell:nth-child(odd) {
+    display: table-cell;
+    width: 50%;
+  }
+
+  .table-cell {
+    display: table-cell;
+    width: 50%;
+  }
+
+  .table-row {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    margin: 5% auto 0;
+    text-align: center;
+  }
+
+  .table-small {
+    display: table-row;
+  }
+}

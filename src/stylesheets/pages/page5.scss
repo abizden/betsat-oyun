@@ -1,0 +1,204 @@
+.page5 {
+  .card {
+    &-desc {
+      color: $color-third;
+      font-size: calculate-rem(15px);
+      margin-bottom: 10px;
+
+      @include mq("desktop") {
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  .table-main-filter {
+    display: flex;
+    justify-content: center;
+
+    @include mq("desktop") {
+      margin-bottom: 10px;
+    }
+
+    button {
+      font-weight: 600;
+      font-size: calculate-rem(22px);
+      color: $color-third;
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $color-seven;
+      }
+    }
+  }
+
+  .table-select-filter {
+    display: flex;
+    justify-content: center;
+
+    @include mq("desktop") {
+      margin-bottom: 10px;
+    }
+
+    .select {
+      select {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .table-rowFilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .filter-txt {
+      font-size: calculate-rem(22px);
+      font-weight: 600;
+      color: $color-third;
+      padding-left: transform-number-to-string($gutter - 4);
+      padding-right: transform-number-to-string($gutter - 4);
+    }
+
+    @include mq("desktop") {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      font-weight: 600;
+      font-size: calculate-rem(22px);
+      color: $color-third;
+      border-radius: 0;
+
+      &.prev {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid $color-third;
+        transition: all 0.2s linear;
+
+        &:hover {
+          border-right-color: $color-seven;
+        }
+      }
+
+      &.next {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid $color-third;
+        transition: all 0.2s linear;
+
+        &:hover {
+          border-left-color: $color-seven;
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &.active {
+        color: $color-seven;
+      }
+    }
+  }
+
+  .table {
+    &-header {
+      @include mq("tablet") {
+        &:first-child {
+          width: 6%;
+        }
+
+        &:nth-child(2) {
+          text-align: left;
+        }
+      }
+    }
+
+    &-small {
+      @include mq("tablet") {
+        &:nth-child(2) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .input {
+    &-search {
+      width: 100%;
+      height: $finger-size;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: calculate-rem(15px);
+      color: $color-fourth;
+      margin-bottom: 4px;
+      border: 0;
+      background-color: #dbdcdd;
+
+      &:focus {
+        outline-color: $color-fourth;
+      }
+
+      @include mq("desktop") {
+        margin-bottom: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .my-position {
+    background-color: #dbdcdd;
+    box-shadow: none;
+    margin-bottom: 10px;
+
+    @include mq("desktop") {
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      color: $color-third;
+      font-size: calculate-rem(22px);
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      @include mq("desktop") {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-item {
+      background-color: $color-secondary;
+      height: 40px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width: 92%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mq("desktop") {
+        height: 50px;
+        max-width: 98%;
+      }
+
+      .skew-fix {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+      }
+
+      span {
+        color: #fff;
+        font-weight: 600;
+        font-size: calculate-rem(22px);
+      }
+    }
+  }
+}

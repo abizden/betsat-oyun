@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
   }
+
+  .guess-score-form {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .card {
@@ -14,7 +19,7 @@
     background-color: $bg-gray;
     margin-bottom: 20px;
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       padding: 50px 30px;
       margin-bottom: 40px;
     }
@@ -41,18 +46,18 @@
         }
       }
 
-      @include mq('tablet') {
+      @include mq("tablet") {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
 
     .card-footer {
-      color: #b4aec0;
+      color: $color-third;
       font-size: calculate-rem(15px);
       margin-top: 20px;
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       width: 50%;
       align-self: center;
     }
@@ -71,11 +76,11 @@
     display: grid;
     grid-gap: transform-number-to-string($gutter);
 
-    @include mq('tablet') {
+    @include mq("tablet") {
       grid-template-columns: auto auto;
     }
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       grid-column-gap: transform-number-to-string(32);
       grid-row-gap: transform-number-to-string(50);
     }
@@ -93,7 +98,7 @@
       color: $color-fourth;
       text-transform: uppercase;
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         font-size: calculate-rem(20px);
         margin-bottom: 50px;
       }
@@ -113,7 +118,7 @@
         flex-direction: row-reverse;
       }
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         margin-bottom: 0;
         flex-basis: auto;
         align-items: center;
@@ -124,13 +129,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 50%;
 
       &-logo {
         display: flex;
         align-items: center;
         min-height: 100px;
 
-        @include mq('desktop') {
+        @include mq("desktop") {
           min-height: 150px;
         }
       }
@@ -141,7 +147,7 @@
         text-transform: uppercase;
         text-align: center;
 
-        @include mq('desktop') {
+        @include mq("desktop") {
           font-size: calculate-rem(15px);
         }
       }
@@ -153,13 +159,26 @@
       justify-content: center;
       align-items: center;
       padding-top: 6px;
+      width: 64%;
 
       &-value {
-        font-size: calculate-rem(50px);
+        font-size: calculate-rem(60px);
         font-weight: 600;
         color: $color-five;
+        border-width: 0;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        text-align: center;
+        -moz-appearance: none;
 
-        @include mq('large') {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        @include mq("large") {
           font-size: calculate-rem(95px);
         }
       }
@@ -167,17 +186,21 @@
       &-up {
         width: 0;
         height: 0;
-        border-left: calculate-rem(8px) solid transparent;
-        border-right: calculate-rem(8px) solid transparent;
-        border-bottom: calculate-rem(8px) solid $color-five;
+        border-left: calculate-rem(14px) solid transparent;
+        border-right: calculate-rem(14px) solid transparent;
+        border-bottom: calculate-rem(14px) solid $color-five;
+        border-top: 0;
+        cursor: pointer;
       }
 
       &-down {
         width: 0;
         height: 0;
-        border-left: calculate-rem(8px) solid transparent;
-        border-right: calculate-rem(8px) solid transparent;
-        border-top: calculate-rem(8px) solid $color-five;
+        border-left: calculate-rem(14px) solid transparent;
+        border-right: calculate-rem(14px) solid transparent;
+        border-top: calculate-rem(14px) solid $color-five;
+        border-bottom: 0;
+        cursor: pointer;
       }
 
       @media (min-width: 350px) {
@@ -185,11 +208,9 @@
         padding-right: 10px;
       }
 
-      @include mq('desktop') {
-        padding-left: 20px;
-        padding-right: 20px;
-
-        &-up, &-down {
+      @include mq("desktop") {
+        &-up,
+        &-down {
           border-width: calculate-rem(18px);
         }
       }
@@ -200,7 +221,7 @@
       font-weight: 600;
       color: $color-five;
 
-      @include mq('desktop') {
+      @include mq("desktop") {
         font-size: calculate-rem(37px);
       }
     }
@@ -218,7 +239,7 @@
     font-weight: 600;
   }
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     margin-top: 30px;
     margin-bottom: 30px;
   }

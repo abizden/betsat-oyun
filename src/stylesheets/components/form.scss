@@ -22,7 +22,53 @@
   }
 }
 
-input[type="checkbox"] {
+.select {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  height: $finger-size;
+
+  select {
+    appearance: none;
+    background: none;
+    border: none;
+    color: $color-third;
+    outline: 0;
+    box-shadow: none;
+    flex: 1;
+    padding-right: calculate-rem(20px);
+    cursor: pointer;
+    font-size: calculate-rem(22px);
+    transition: 0.25s all ease;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  &:hover, &:focus {
+    select {
+      color: $color-seven;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: calculate-rem(8px) solid transparent;
+    border-right: calculate-rem(8px) solid transparent;
+    border-top: calculate-rem(8px) solid #322251;
+    pointer-events: none;
+    transition: 0.25s all ease;
+  }
+}
+
+input[type="radio"] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
   /* Remove most all native input styles */

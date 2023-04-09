@@ -1,0 +1,55 @@
+.page7 {
+  .card {
+    &-banner:first-child {
+      @include mq("tablet") {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .table {
+    &:first-of-type {
+      .table-header {
+        @include mq("tablet") {
+          &:first-child {
+            font-size: calculate-rem(37px);
+          }
+        }
+      }
+    }
+
+    &-header {
+      @include mq("tablet") {
+        &:first-child {
+          // width: 5%;
+          text-align: left;
+        }
+      }
+    }
+
+    &-small {
+      @include mq("tablet") {
+        &:first-child {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  hr {
+    border-color: $color-eight;
+    border-width: 2px;
+    margin: 14px -6px;
+
+    @include mq("desktop") {
+      margin: 4px -6px;
+    }
+
+    &:first-of-type {
+      @include mq("desktop") {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+    }
+  }
+}

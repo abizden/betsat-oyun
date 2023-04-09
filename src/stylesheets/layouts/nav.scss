@@ -53,8 +53,8 @@
       }
 
       @include mq('tablet') {
-        padding-left: 23px;
-        padding-right: 23px;
+        padding-left: 28px;
+        padding-right: 28px;
         justify-content: flex-start;
         margin-top: 0;
         margin-bottom: 0;
@@ -81,6 +81,22 @@
     margin-top: 6px;
     display: flex;
     justify-content: center;
+
+    .select {
+      &::after {
+        border-top-color: $color-primary;
+      }
+
+      &:hover {
+        select {
+          color: $color-primary;
+        }
+      }
+
+      select {
+        color: #fff;
+      }
+    }
   }
 
   @include mq('tablet') {
