@@ -23,7 +23,8 @@
 
       input[type="checkbox"] {
         &:disabled {
-          color: $form-control-color;
+          color: $form-label-control-color;
+          opacity: 1;
           cursor: default;
         }
       }

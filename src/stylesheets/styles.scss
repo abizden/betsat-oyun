@@ -13,11 +13,15 @@
 @import "components/card";
 @import "components/form";
 @import "components/table";
+@import "components/modal";
+@import "components/stepper";
 //
 @import "layouts/header";
 @import "layouts/nav";
 @import "layouts/footer";
 //
+@import "pages/register";
+@import "pages/login";
 @import "pages/page2";
 @import "pages/page3";
 @import "pages/page5";

@@ -1,0 +1,168 @@
+.register {
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // position: relative;
+    // height: 48vh;
+  }
+
+  .form {
+    background: #fff;
+    // position: absolute;
+    margin-top: 20px;
+    width: 26rem;
+    box-shadow: 0 10px 29px 9px rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow: hidden;
+
+    &-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      text-align: center;
+    }
+
+    &-active {
+      z-index: 1000;
+      display: block;
+
+      &-animate {
+        animation: moveRight 1s;
+      }
+    }
+
+    &-inactive {
+      display: block;
+      animation: moveLeft 1s;
+    }
+
+    &--header-container {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        270deg,
+        rgba(136, 112, 174, 1) 0%,
+        rgba(90, 48, 141, 1) 100%
+      );
+      color: #fff;
+      padding: 1rem 0;
+      margin-bottom: calculate-rem(20px);
+    }
+
+    &--header-title {
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    &--header-text {
+      padding-top: 0.5rem;
+      font-size: calculate-rem(14px);
+      text-align: center;
+    }
+
+    &__btn {
+      margin-bottom: 1rem;
+    }
+
+    &--message-text {
+      width: 25rem;
+      background: #fff;
+      color: #444;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 1.4rem;
+      box-shadow: 0.2rem 0.2rem 0.5rem rgba(51, 51, 51, 0.2);
+      animation: fadeIn 0.8s;
+      border-radius: 1rem;
+    }
+
+    &-active {
+      z-index: 1000;
+      display: block;
+
+      &-animate {
+        animation: moveRight 1s;
+      }
+    }
+
+    &-inactive  {
+      display: block;
+      animation: moveLeft 1s;
+    }
+
+    &-control {
+      .input-area-code {
+        flex-basis: 17%;
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        -moz-appearance: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+
+      .input-telefone {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      .btn-enviar-code {
+        font-size: calculate-rem(12px);
+        flex-basis: 40%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-left: 10px;
+      }
+
+      .user-tel {
+        text-align: center;
+        margin-bottom: calculate-rem(10px);
+      }
+
+      .tel-code {
+        max-width: 79%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &-label {
+        text-align: left;
+      }
+    }
+  }
+
+  .verification {
+    .form-control-err {
+      text-align: center;
+    }
+  }
+
+  #enviar-form {
+    margin-bottom: 1.4rem;
+  }
+
+  .aviso-list {
+    list-style-position: inside;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+
+  .title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .cpf-num {
+    margin-bottom: 20px;
+  }
+
+  .cpf-text {
+    margin-bottom: 10px;
+  }
+}

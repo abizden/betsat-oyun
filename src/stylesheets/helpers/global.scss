@@ -13,22 +13,32 @@ html {
   font-size: 62%;
   scroll-behavior: smooth;
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     font-size: 100%;
   }
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
   background: rgb(255, 255, 255);
   background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(136, 112, 174, 1) 18%,
-    rgba(90, 48, 141, 1) 31%
-  ) no-repeat;
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(136, 112, 174, 1) 18%,
+      rgba(90, 48, 141, 1) 31%
+    )
+    no-repeat;
   font-family: $font-family;
   font-weight: 300;
   overflow-x: hidden;
+}
+
+strong {
+  font-weight: 600;
 }
 
 a {
@@ -96,10 +106,15 @@ button {
   padding-right: 20px;
   border-radius: $border-radius;
   font-size: 14px;
-  transition: all 0.2s linear;
+  transition: all 0.2s ease;
   cursor: pointer;
   border: 0;
   background-color: transparent;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
   &-icon {
     justify-content: center;
@@ -111,12 +126,12 @@ button {
   }
 
   &-primary {
-    background: $color-primary;
+    background-color: $color-primary;
     color: #fff;
 
-    &:hover,
-    &:focus {
-      background: #fff;
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: #fff;
       color: $color-primary;
       border-color: $color-primary;
     }
@@ -126,8 +141,8 @@ button {
     background-color: $color-secondary;
     color: #fff;
 
-    &:hover,
-    &:focus {
+    &:hover:enabled,
+    &:focus:enabled {
       background: $color-primary;
       color: #000;
     }
@@ -139,28 +154,61 @@ button {
     font-size: calculate-rem(24px);
     font-weight: 700;
 
-    &:hover,
-    &:focus {
-      background: $color-primary;
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: $color-primary;
       color: #000;
     }
   }
 
   &-large {
-    @include mq('large') {
+    @include mq("large") {
       height: calc(#{$finger-size} * 1.5);
     }
   }
 }
 
 .parallelogram {
-    transform: skew(-40deg);
-    border-radius: 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  transform: skew(-40deg);
+  border-radius: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 
-    .skew {
-      &-fix {
-        transform: skew(40deg);
-      }
+  .skew {
+    &-fix {
+      transform: skew(40deg);
     }
   }
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -320px;
+
+  @include mq("desktop") {
+    margin-bottom: -120px;
+  }
+}
+
+.footer,
+.push {
+  height: 320px;
+
+  @include mq("desktop") {
+    height: 120px;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}

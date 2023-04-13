@@ -1,17 +1,4 @@
 .form-control {
-  font-size: calculate-rem(15px);
-  font-weight: 500;
-  line-height: 1.1;
-  display: grid;
-  grid-template-columns: 1em auto;
-  gap: 0.5em;
-  color: $form-control-color;
-  align-items: center;
-
-  @include mq('desktop') {
-    grid-template-columns: 1.8em auto;
-  }
-
   & + & {
     margin-top: 1em;
   }
@@ -19,6 +6,41 @@
   &-disabled {
     color: $form-control-disabled;
     cursor: not-allowed;
+  }
+
+  &-label-control {
+    font-size: calculate-rem(15px);
+    font-weight: 500;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: $form-label-control-color;
+    align-items: center;
+
+    @include mq("desktop") {
+      grid-template-columns: 1.8em auto;
+    }
+  }
+
+  &-label {
+    font-size: calculate-rem(14px);
+    font-weight: 500;
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 0.1em;
+  }
+
+  &-info {
+    margin-bottom: calculate-rem(10px);
+    font-size: calculate-rem(13px);
+  }
+
+  &-err {
+    color: #ff0000;
+    font-size: calculate-rem(13px);
+    margin-top: 0.2em;
+    text-align: left;
   }
 }
 
@@ -46,14 +68,15 @@
     }
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     select {
       color: $color-seven;
     }
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -68,7 +91,8 @@
   }
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
   /* Remove most all native input styles */
@@ -87,9 +111,14 @@ input[type="radio"], input[type="checkbox"] {
   display: grid;
   place-content: center;
 
-  @include mq('desktop') {
+  @include mq("desktop") {
     width: 1.75em;
     height: 1.75em;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 
   &::before {
@@ -100,11 +129,11 @@ input[type="radio"], input[type="checkbox"] {
     transform: scale(0);
     transform-origin: bottom left;
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em $form-control-color;
+    box-shadow: inset 1em 1em $form-label-control-color;
     /* Windows High Contrast Mode */
     background-color: CanvasText;
 
-    @include mq('desktop') {
+    @include mq("desktop") {
       width: 0.85em;
       height: 0.85em;
     }
@@ -118,9 +147,29 @@ input[type="radio"], input[type="checkbox"] {
     outline: max(2px, 2.4px) solid currentColor;
     outline-offset: max(2px, 2.4px);
   }
+}
 
-  &:disabled {
-    color: $form-control-disabled;
-    cursor: not-allowed;
+input {
+  &[type="text"],
+  &[type="number"],
+  &[type="email"],
+  &[type="password"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: block;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #bdbdbb;
+    width: 100%;
+    height: $finger-size;
   }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.input-group {
+  display: flex;
 }
