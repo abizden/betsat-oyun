@@ -52,8 +52,6 @@ export const countDownClock = (number = 100, format = 'seconds') => {
       default:
         return timer(number);
     }
-
-    return null;
   }
 
   convertFormat(format);
