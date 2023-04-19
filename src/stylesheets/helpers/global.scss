@@ -116,6 +116,11 @@ button {
     opacity: 0.5;
   }
 
+  &-fluid {
+    width: 100%;
+    justify-content: center;
+  }
+
   &-icon {
     justify-content: center;
     padding-left: 0;
