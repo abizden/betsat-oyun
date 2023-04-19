@@ -46,6 +46,15 @@
         }
       }
 
+      .form-control {
+        display: flex;
+        align-items: center;
+
+        input {
+          margin-right: 4px;
+        }
+      }
+
       @include mq("tablet") {
         grid-template-columns: 1fr 1fr 1fr;
       }
