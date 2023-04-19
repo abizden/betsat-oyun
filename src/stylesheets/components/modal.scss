@@ -9,6 +9,7 @@
   text-align: left;
   background: rgba(0, 0, 0, 0.3);
   transition: opacity 0.25s ease;
+  z-index: 9999;
 
   h2 {
     text-align: center;
@@ -44,22 +45,27 @@
 }
 
 .modal-state:checked + .modal .modal__inner {
-  top: 0;
+  @include mq("tablet") {
+    top: 130px;
+  }
+
+  @include mq("large") {
+    top: 260px;
+  }
 }
 
 .modal__inner {
   transition: top 0.25s ease;
   position: absolute;
-  top: -20%;
+  top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
-  width: 50%;
-  margin: auto;
+  width: 100vw;
   overflow: auto;
   background: #fff;
   padding: 1em 2em;
-  height: 50%;
+  height: 19%;
 }
 
 .modal__close {
@@ -97,13 +103,21 @@
 
 @include mq("tablet") {
   .modal__inner {
-    width: 94%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50%;
   }
 }
 
 @include mq("desktop") {
   .modal__inner {
-    width: 80%;
+    width: 90vw;
+    height: 60%;
   }
 }
 
+@media screen and (min-width: 1680px) {
+  .modal__inner {
+    width: 70vw;
+  }
+}
