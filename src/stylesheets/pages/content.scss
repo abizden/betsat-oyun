@@ -1,9 +1,13 @@
 .content {
-    p + p {
-      margin-top: 10px;
+  p {
+    margin-bottom: 10px;
 
-      @include mq('desktop') {
-        margin-top: 20px;
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
+
+    @include mq("desktop") {
+      margin-bottom: 20px;
+    }
+  }
 }
