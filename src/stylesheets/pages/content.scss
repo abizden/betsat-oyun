@@ -1,0 +1,9 @@
+.content {
+    p + p {
+      margin-top: 10px;
+
+      @include mq('desktop') {
+        margin-top: 20px;
+      }
+    }
+}
