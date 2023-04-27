@@ -1,0 +1,40 @@
+.contact-us {
+  .contact-card {
+    max-width: 100%;
+    text-align: center;
+
+    @include mq('tablet') {
+      max-width: 60%;
+      margin: 40px auto;
+    }
+  }
+
+  .social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+
+    li {
+      display: flex;
+
+      &:not(:first-child) {
+        margin-top: 14px;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 600;
+
+        .icon {
+          font-size: 20px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+}
