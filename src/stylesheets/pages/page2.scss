@@ -49,9 +49,14 @@
       .form-control {
         display: flex;
         align-items: center;
+        width: 70%;
 
         input {
           margin-right: 4px;
+
+          @include mq('desktop') {
+            width: 3.3em;
+          }
         }
       }
 
