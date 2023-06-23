@@ -99,4 +99,6 @@ export const init = () => {
    `;
     e.preventDefault();
   }); */
+
+  $('#tel').mask('(00) 00000-0000');
 };
