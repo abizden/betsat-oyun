@@ -15,7 +15,7 @@ const config = {
   site_description: 'BetsatClub',
 
   // Your website's URL, used for sitemap
-  site_url: '',
+  site_url: 'https://betsatclub.com/',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',

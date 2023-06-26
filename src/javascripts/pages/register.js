@@ -59,6 +59,12 @@ const cpfChange = (cpfValue) => {
 export const init = () => {
   const registerCounterBtn = document.getElementById('register-counter');
   const cpfInput = document.getElementById('cpfInput');
+
+  // eslint-disable-next-line no-undef
+  $('#tel').mask('(00) 00000-0000');
+
+  if (!registerCounterBtn) return;
+
   const btnIsVisible = registerCounterBtn.classList.contains('d-block');
 
   if (btnIsVisible) {
@@ -99,6 +105,4 @@ export const init = () => {
    `;
     e.preventDefault();
   }); */
-
-  $('#tel').mask('(00) 00000-0000');
 };
